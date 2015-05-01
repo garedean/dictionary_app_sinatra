@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 text-center centered">
+    <form action="/definitions" method="post">
+      <div class="form-group">
+        <input name="id" type="hidden" value="<%= @word.id %>">
+        <input id="definition" name="definition" class="form-control" placeholder="Definition">
+      </div>
+      <button class="btn btn-default">Add Definition</button>
+    </form>
+  </div>
+</div>
+
+<a href="/words/<%= @word.id %>">Back</a>
