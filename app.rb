@@ -5,6 +5,10 @@ require('./lib/definition.rb')
 also_reload('lib/**/*.rb')
 #set(:show_exceptions, false)
 
+get('/reset') do
+  Word.clear()
+end
+
 get('/') do
   @words = Word.all()
   erb(:index)
