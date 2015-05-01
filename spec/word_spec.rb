@@ -1,5 +1,6 @@
 require('rspec')
 require('word')
+require('definition')
 
 describe('Word') do
   before do
@@ -30,6 +31,14 @@ describe('Word') do
       word2 = Word.new({:word => 'programming'})
       word2.save()
       expect(Word.all()).to(eq([word1, word2]))
+    end
+  end
+
+  describe('#add_definition') do
+    it('adds a definition to the word') do
+      word = Word.new({:word => 'logical'})
+      definition = word.add_definition("According to or ageeing with the principles of logic.")
+      expect(word.definitions()).to(eq([definition]))
     end
   end
 end
