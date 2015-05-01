@@ -39,12 +39,19 @@ describe('Word') do
       word = Word.new({:word => 'logical'})
       expect(word.definitions()).to(eq([]))
     end
+
+    it('returns array of definitions when definitions have been assigned to word') do
+      word = Word.new({:word => 'epic'})
+      definition1 = word.add_definition('Heroic; majestic; impressively great.')
+      definition2 = word.add_definition('Of unusually great size or extent.')
+      expect(word.definitions()).to(eq([definition1, definition2]))
+    end
   end
 
   describe('#add_definition') do
     it('adds a definition to the word') do
       word = Word.new({:word => 'logical'})
-      definition = word.add_definition("According to or ageeing with the principles of logic.")
+      definition = word.add_definition('According to or ageeing with the principles of logic.')
       expect(word.definitions()).to(eq([definition]))
     end
   end
