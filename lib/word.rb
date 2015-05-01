@@ -20,10 +20,8 @@ class Word
   end
 
   define_method(:add_definition) do |definition|
-    definition = Definition.new({:definition => "According to or ageeing with the principles of logic."})
+    definition = Definition.new({:definition => definition})
     @definitions.push(definition)
-
-    # Return the definition object.
     definition
   end
 end
