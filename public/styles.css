@@ -1,0 +1,54 @@
+.main-title {
+  border-top: 1px solid #BAE4F0;
+  border-bottom: 1px solid #BAE4F0;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.row {
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+a.heading {
+  color: #333;
+}
+
+a.heading:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+.comfy {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.buttonized {
+  border: 1px solid #ddd;
+  padding: 8px 50px;
+  border-radius: 5px;
+}
+
+.buttonized:hover {
+  text-decoration: none;
+  background: #f5f5f5;
+}
+
+.word-list {
+  height: 300px;
+  overflow: scroll;
+}
+
+.stretch {
+  width: 100%;
+}
+
+.word-list ul {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.centered {
+  margin-top: 100px;
+}
