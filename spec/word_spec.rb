@@ -34,6 +34,13 @@ describe('Word') do
     end
   end
 
+  describe('#definitions') do
+    it('returns empty array when no definitions have been added to a word') do
+      word = Word.new({:word => 'logical'})
+      expect(word.definitions()).to(eq([]))
+    end
+  end
+
   describe('#add_definition') do
     it('adds a definition to the word') do
       word = Word.new({:word => 'logical'})
