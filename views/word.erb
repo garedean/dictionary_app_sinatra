@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="word-list">
+    <% if @word.definitions().empty?() %>
+      <h4 class="text-center comfy">There aren't any definitions for this word.
+        <a href="<%= @word.id %>/definitions/new">Add one.</a></h4>
+    <% else %>
+      <ul>
+        <% @word.definitions().each_with_index do |definition_object, idx| %>
+          <li>
+            Definition #<%= idx + 1 %>: <em><%= definition_object.definition() %></em>
+          </li>
+          <br>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+<% unless @word.definitions().empty?() %>
+  <a href="<%= @word.id %>/definitions/new" class="text_center buttonized">Add New Definition</a>
+  <br>
+  <br>
+<% end %>
+<a href="/">Back</a>
