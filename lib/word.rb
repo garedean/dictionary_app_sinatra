@@ -25,4 +25,14 @@ class Word
     @definitions.push(definition)
     definition
   end
+
+  define_method(:find_word) do |target_id|
+    word_match = nil
+    @@words.each do |word|
+      if word.id == target_id
+        word_match = word
+      end
+    end
+    word_match
+  end
 end
