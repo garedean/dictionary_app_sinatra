@@ -1,10 +1,11 @@
 class Word
   @@words = []
-  attr_reader(:definitions)
+  attr_reader(:word, :definitions, :id)
 
   define_method(:initialize) do |attributes|
-    @word = attributes.fetch(:word)
+    @word = attributes.fetch(:word).capitalize()
     @definitions = []
+    @id = @@words.size() + 1
   end
 
   define_method(:save) do
