@@ -26,7 +26,7 @@ class Word
     definition
   end
 
-  define_method(:find_word) do |target_id|
+  define_singleton_method(:find) do |target_id|
     word_match = nil
     @@words.each do |word|
       if word.id == target_id
