@@ -12,4 +12,8 @@ class Word
   define_singleton_method(:all) do
     @@words
   end
+
+  define_singleton_method(:clear) do
+    @@words = []
+  end
 end
