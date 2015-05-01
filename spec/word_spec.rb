@@ -7,15 +7,15 @@ describe('Word') do
   end
 
   describe('#save') do
-    it('adds the word to an array containing all words in the dictionary') do
+    it('adds word to dictionary when called on word') do
       word = Word.new({:word => "logical"})
       word.save()
       expect(Word.all()).to(eq([word]))
     end
-  end
 
-  it('does not add the word to array containing all words if #save is not called') do
-    word = Word.new({:word => "logical"})
-    expect(Word.all()).to(eq([]))
+    it('does not add word to dictionary if #save is not called on word') do
+      word = Word.new({:word => "logical"})
+      expect(Word.all()).to(eq([]))
+    end
   end
 end
