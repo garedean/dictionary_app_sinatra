@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 word-list">
+    <% if @words.empty? %>
+      <h4 class="text-center centered">There aren't any words in the dictionary. <a href="words/new">Add one.</a></h4>
+    <% else %>
+      <ul>
+        <% @words.each do |word_object| %>
+          <li>
+            <a href="/words/<%= word_object.id %>">
+              <%= word_object.word %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+<% unless @words.empty? %>
+  <div>
+    <a href="words/new" class="text_center buttonized">Add a Word</a>
+  </div
+<% end %>
