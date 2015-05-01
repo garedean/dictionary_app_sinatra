@@ -74,4 +74,14 @@ describe('Word') do
       expect(word.id()).to(eq(1))
     end
   end
+
+  describe('.find') do
+    it('returns a word based on the id argument passed in') do
+      word1 = Word.new({:word => 'epic'})
+      word1.save()
+      word2 = Word.new({:word => 'tubular'})
+      word2.save()
+      expect(Word.find(1)).to(eq(word1))
+    end
+  end
 end
