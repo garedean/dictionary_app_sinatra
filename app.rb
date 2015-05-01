@@ -7,6 +7,7 @@ also_reload('lib/**/*.rb')
 
 get('/reset') do
   Word.clear()
+  redirect to('/')
 end
 
 get('/') do
@@ -24,4 +25,12 @@ post('/words') do
   word_object.save()
 
   redirect to('/')
+end
+
+get('/words/:id') do
+  id = params.fetch('id').to_i
+  @word = Word.find(id)
+  @word_definitions = @word.definitions()
+
+  erb(:word)
 end
