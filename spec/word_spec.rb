@@ -8,14 +8,25 @@ describe('Word') do
   end
 
   describe('#save') do
+    it('does not add word to dictionary if #save is not called on word') do
+      word = Word.new({:word => 'logical'})
+      expect(Word.all()).to(eq([]))
+    end
+
     it('adds word to dictionary when called on word') do
       word = Word.new({:word => 'logical'})
       word.save()
       expect(Word.all()).to(eq([word]))
     end
+  end
 
-    it('does not add word to dictionary if #save is not called on word') do
-      word = Word.new({:word => 'logical'})
+  describe('.clear') do
+    it('clears all words from the dictionary') do
+      word1 = Word.new({:word => 'cat'})
+      word1.save()
+      word2 = Word.new({:word => 'kitty'})
+      word2.save()
+      Word.clear()
       expect(Word.all()).to(eq([]))
     end
   end
