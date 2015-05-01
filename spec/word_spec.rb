@@ -66,4 +66,12 @@ describe('Word') do
       expect(word.definitions()).to(eq([definition]))
     end
   end
+
+  describe('#id') do
+    it('returns the id of a word') do
+      word = Word.new({:word => 'epic'})
+      word.save()
+      expect(word.id()).to(eq(1))
+    end
+  end
 end
